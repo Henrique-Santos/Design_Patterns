@@ -1,0 +1,32 @@
+Template Method Design Pattern
+
+Intenção: Define o esqueleto de um algoritmo na superclasse, mas permite
+subclasses substituem as etapas específicas do algoritmo sem alterar seu
+estrutura.
+
+--- Código ---
+
+(1): A Classe Abstrata define um método modelo que contém um esqueleto de alguns
+algoritmos, composto de chamadas para operações (geralmente) primitivas abstratas.
+As subclasses concretas devem implementar estas operações, mas deixar o modelo do
+método em si intacto.
+
+(2): O método do modelo define o esqueleto de um algoritmo.
+
+(3): Estas operações já têm implementações.
+
+(4): Estas operações têm que ser implementadas em subclasses.
+
+(5): Estes são "ganchos". As subclasses podem sobrepor-se a elas, mas não é obrigatório
+uma vez que os ganchos já têm implementação padrão (mas vazios). Hooks
+fornecem pontos adicionais de extensão em alguns lugares cruciais do
+algoritmo.
+
+(6): As classes concretas têm que implementar todas as operações abstratas da classe base.
+Elas também podem anular algumas operações com uma implementação padrão.
+
+(7): Normalmente, as classes concretas sobrepõem apenas a uma fração das operações da classe base.
+
+(8): O código do cliente chama o método de modelo para executar o algoritmo. O
+código cliente não precisa conhecer a classe concreta de um objeto com o qual trabalha, pois
+desde que funcione com objetos através da interface de sua classe base.

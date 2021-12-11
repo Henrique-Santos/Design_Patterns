@@ -1,0 +1,25 @@
+Singleton Design Pattern
+
+Intenção: Permite assegurar que uma classe tenha apenas uma instância, ao mesmo tempo que fornece um
+ponto de acesso global a esta instância.
+
+--- Código ---
+
+(1): A classe Singleton define o método `getInstance` que permite
+clientes acessar a mesma instância de Singleton.
+
+(2): O campo para armazenar a instância singleton deve ser
+declarado como estático.
+
+(3): O construtor do singleton deve sempre ser privado para
+prevenir chamadas diretas de construção com o operador
+`new`.
+
+(4): O método estático que controla acesso à instância do singleton.
+Esta implementação permite subclassificar a classe Singleton,
+mantendo apenas um exemplo de cada subclasse.
+
+(5): Finalmente, qualquer singleton deve definir alguma lógica
+de negócio que deve ser executada em sua instância.
+
+(6): Código	cliente.

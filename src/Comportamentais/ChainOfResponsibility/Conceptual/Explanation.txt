@@ -1,0 +1,27 @@
+Chain of Responsibility Design Pattern
+
+Intenção: Permite que você passe pedidos por uma cadeia de manipuladores/handlers. Ao receber o pedido
+cada manipulador decide se vai processa-lo ou passá-lo para
+o próximo manipulador da cadeia.
+
+--- Código ---
+
+(1): A interface Handler declara um método para a construção da
+corrente de handlers. Ela também declara um método para
+executar um pedido.
+
+(2): O comportamento padrão de encadeamento pode ser implementado dentro de uma classe handler base.
+
+(3): O retorno de um próximo handler nos permitirá vincular manipuladores em um
+forma conveniente como esta: monkey.setNext(squirrel).setNext(dog);
+
+(4): Todos os Handlers concretos ou lidam com um pedido ou o passam para o próximo handler
+da cadeia.
+
+(5): O código do cliente é normalmente adequado para trabalhar com um único handler. Na maioria dos casos, o código do cliente é
+nem mesmo se dá conta de que o handler faz parte de uma cadeia.
+
+(6): A outra parte do código do cliente constrói a cadeia real.
+
+(7): O cliente deve ser capaz de enviar um pedido a qualquer manipulador, não apenas ao
+primeiro da cadeia.

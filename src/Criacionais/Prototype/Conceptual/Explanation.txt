@@ -1,0 +1,14 @@
+Prototype Design Pattern
+
+Intenção: Permite copiar objetos existentes sem tornar o seu código dependente de suas classes.
+
+--- Código ---
+
+(01): A classe de exemplo que tem capacidade de clonagem. Veremos como valores de campo
+de tipos diferentes serão clonados.
+
+(02): Clonagem de um objeto que tem um objeto aninhado com referência circular
+requer um tratamento especial. Após a clonagem estar concluída,
+deve apontar para o objeto clonado, em vez do objeto original. O operador de propagação pode ser útil para este caso.
+
+(03): Código cliente

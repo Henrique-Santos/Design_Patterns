@@ -1,0 +1,33 @@
+Proxy Design Pattern
+
+Intenção: Fornecer um substituto ou um titular no lugar de um outro objeto paraa controlar
+o acesso ao objeto original ou para acrescentar outras responsabilidades.
+
+--- Código ---
+
+(1): A interface Subject declara operações comuns tanto para o RealSubject como para o
+Proxy. Desde que o cliente trabalhe com RealSubject utilizando esta interface,
+poderá passar-lhe uma proxy em vez de um RealSubject.
+
+(2): O RealSubject contém alguma lógica comercial central. Normalmente, o RealSubjects
+são capazes de fazer algum trabalho útil, que também pode ser muito lento ou
+sensível - por exemplo, correção de dados de entrada. Um Proxy pode resolver estes problemas
+sem nenhuma alteração no código do RealSubject.
+
+(3): O Proxy tem uma interface idêntica à do RealSubject.
+
+(4): O Proxy mantém uma referência a um objeto da classe RealSubject. E
+pode ser carregado de um modo preguiçoso ou passado ao Proxy pelo cliente.
+
+(5): As aplicações mais comuns do padrão Proxy são com o carregamento preguiçoso,
+cache, controle do acesso, registo, etc. Um Proxy pode realizar essas tarefas
+e depois dependendo do resultado, passar a execução para o
+mesmo método num objeto RealSubject ligado.
+
+(6): Alguns controles reais devem ser feitos aqui.
+
+(7): O código do cliente funciona com todos os objetos (tanto subject como
+proxies) através da interface do subject a fim de apoiar tanto RealSubject como
+proxyes. Na vida real, no entanto, os clientes trabalham principalmente com os seus verdadeiros subject
+diretamente. Neste caso, para implementar o padrão mais facilmente, é possível estender
+o seu substituto da classe do verdadeiro subject.

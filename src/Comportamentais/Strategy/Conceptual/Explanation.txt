@@ -1,0 +1,32 @@
+Strategy Design Pattern
+
+Intenção: Permite definir uma família de algoritmos, colocar cada um deles em uma
+classe separada, e tornar seus objetos intercambiáveis.
+
+--- Código ---
+
+(1): O Context define a interface de interesse para os clientes.
+
+(2): @type {Strategy} O Context mantém uma referência a um dos objetos de Strategy.
+O Contexto não conhece a classe concreta de uma estratégia. Ele
+deve trabalhar com todas as estratégias através da interface Strategy.
+
+(3): Normalmente, o Contexto aceita uma estratégia através do construtor, mas também
+fornece um setter para mudá-lo em tempo de execução.
+
+(4): Normalmente, o Contexto permite substituir um objeto de Estratégia em tempo de execução.
+
+(5): O Contexto delega algum trabalho ao objeto de Estratégia em vez de
+implementando múltiplas versões do algoritmo por conta própria.
+
+(6): A interface Strategy declara operações comuns a todas as versões suportadas
+de algum algoritmo.
+O Contexto usa esta interface para chamar o algoritmo definido por
+Estratégias Concretas.
+
+(7): Estratégias concretas implementam o algoritmo enquanto seguem a interface Strategy.
+A interface os torna intercambiáveis no Contexto.
+
+(8): O código do cliente escolhe uma estratégia concreta e a passa para o contexto. O
+cliente deve estar ciente das diferenças entre as estratégias a fim de fazer
+a escolha certa.

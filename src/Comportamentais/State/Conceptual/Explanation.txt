@@ -1,0 +1,26 @@
+State Design Pattern
+
+Intenção: Permite que um objeto altere seu comportamento quando seu estado interno muda. 
+É como se o objeto alterasse sua própria classe.
+
+--- Código ---
+
+(1): O Contexto define a interface de interesse para os clientes. Ele também mantém uma
+referência a uma instância de uma subclasse do Estado, que representa o atual
+estado do Contexto.
+
+(2): @type {State} Uma referência ao estado atual do Contexto.
+
+(3): O Contexto permite mudar o objeto do Estado em tempo de execução.
+
+(4): O Contexto delega parte de seu comportamento ao objeto do Estado atual.
+
+(5): A classe base State declara métodos que todo ConcreteState deve implementar
+e também fornece uma referência retroativa ao objeto Contexto, associado
+com o Estado. Este backreference pode ser usado pelos Estados para fazer a transição do
+Contexto para outro Estado.
+
+(6): Os Estados concretos implementam vários comportamentos, associados a um estado do
+Contexto.
+
+(7): Código cliente.

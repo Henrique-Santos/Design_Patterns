@@ -1,0 +1,43 @@
+Observer Design Pattern
+
+Intenção: Permite definir um mecanismo de assinatura para notificar múltiplos objetos
+sobre quaisquer eventos que aconteçam com o objeto que eles estão observando.
+Note que há muitos termos diferentes com significado semelhante associados
+com este padrão.
+
+--- Código ---
+
+(1): A interface Subject/Sujeito declara um conjunto de métodos para o gerenciamento de subscribers/assinantes.
+
+(2): Anexe um observador/observer ao assunto.
+
+(3): Destacar um observador do assunto.
+
+(4): Notificar todos os observadores sobre um evento.
+
+(5): O Subject possui algum estado importante e notifica os observadores quando há
+mudanças no estado.
+
+(6): @type {number} Por uma questão de simplicidade, o estado do Subject essencial
+a todos os observadores, é armazenada nesta variável.
+
+(7): @type {Observer[]} Lista de observadores. Na vida real, a lista de
+observadores podem ser armazenados de forma mais abrangente (categorizados por evento
+tipo, etc.).
+
+(8): Os métodos de gerenciamento dos observadores.
+
+(9): Acionar uma atualização em cada observador.
+
+(10): Normalmente, a lógica de assinatura é apenas uma fração do que um Subject pode
+realmente fazer. Os Subjects geralmente têm alguma lógica empresarial importante, que
+aciona um método de notificação sempre que algo importante está prestes a
+acontecer (ou depois de acontecer).
+
+(11): A interface do Observador declara o método de atualização, utilizado pelos assinantes.
+
+(12): Recebe atualização do assunto.
+
+(13): Os Observadores concretos reagem às atualizações emitidas pelo Subject.
+
+(14): Código cliente.

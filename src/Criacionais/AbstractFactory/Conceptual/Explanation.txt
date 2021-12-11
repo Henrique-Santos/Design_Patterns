@@ -1,0 +1,52 @@
+Abstract Factory Design Pattern
+
+Intenção: Permite produzir famílias de objetos relacionados sem especificar suas classes de forma concreta.
+
+--- Código ---
+
+(1): A interface fábrica abstrata declara um conjunto de métodos
+que retorna diferentes produtos abstratos. Estes produtos são
+chamados de família e estão relacionados por um tema ou
+conceito de alto nível. Produtos de uma família são
+geralmente capazes de colaborar entre si. Uma família de
+produtos pode ter várias variantes, mas os produtos de uma
+variante são incompatíveis com os produtos de outro variante.
+
+(2): As fábricas concretas produzem uma família de produtos que
+pertencem a uma única variante. A fábrica garante que os
+produtos resultantes sejam compatíveis. Assinaturas dos
+métodos fabrica retornam um produto abstrato, enquanto que
+dentro do método um produto concreto é instanciado.
+
+(3): Cada fábrica concreta tem uma variante(família) de produto
+correspondente.
+
+(4): Cada produto distinto de uma família de produtos deve ter uma
+interface base. Todas as variantes do produto devem
+implementar essa interface.
+
+(5): Produtos concretos são criados por fábricas concretas
+correspondentes.
+
+(6): Aqui está a interface base de outro produto. Todos os
+produtos podem interagir entre si, mas a interação apropriada
+só é possível entre produtos da mesma variante concreta.
+
+(7): O produto B é capaz de fazer suas próprias coisas...
+
+(8): ...mas também pode colaborar com o ProductA.
+A fábrica abstrata garante que todos os produtos por ela criados sejam do mesma variante e, portanto, compatível.
+
+(9): Estes produtos concretos são criados pelas fábricas concretas correspondentes.
+
+(10): A variante, Produto B1, só é capaz de funcionar corretamente com a variante,
+Produto A1. No entanto, aceita qualquer instância do AbstractProductA como um argumento.
+
+(11): A variante, Produto B2, só é capaz de funcionar corretamente com a variante, Produto A2. No entanto, aceita qualquer instância do AbstractProductA como
+um argumento.
+
+(12): O código cliente trabalha com fábricas e produtos apenas
+através de tipos abstratos. Isso permite que você passe qualquer subclasse fábrica ou de
+produto para o código cliente sem quebrá-lo.
+
+(13): O código do cliente pode trabalhar com qualquer classe de fábrica concreto.

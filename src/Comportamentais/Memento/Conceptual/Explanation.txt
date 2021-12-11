@@ -1,0 +1,37 @@
+Memento Design Pattern
+
+Intenção: Permite salvar e restaurar o estado anterior de um objeto sem
+revelar os detalhes da sua implementação.
+
+--- Código ---
+
+(1): O originador tem alguns dados importantes que podem mudar com
+o tempo. Ele também define um método para salvar seu estado
+dentro de um memento e outro método para restaurar o estado
+dele.
+
+(2): Por uma questão de simplicidade, o estado do originador é armazenado dentro de um
+variável única.
+
+(3): A lógica empresarial do Originador pode afetar o seu estado interno. Por conseguinte, 
+o cliente deve atribuir o Estado antes de lançar os métodos da
+lógica de negócio através do método save().
+
+(4): Guarda o estado atual dentro de um memento.
+
+(5): Restaura o estado do Originador a partir de um objeto memento.
+
+(6): A interface Memento fornece uma forma de recuperar os metadados do memento, tais como
+data de criação ou nome. No entanto, não expõe o estado do Originador.
+
+(7): O Memento concreto contém a infra-estrutura para o armazenamento do estado do Originador.
+
+(8): O Originador usa este método quando restaura o seu estado.
+
+(9): Os métodos restantes são utilizados pelo Caretaker para exibir metadados.
+
+(10): O Caretaker não depende da classe ConcreteMemento. Por conseguinte, ele
+não tem acesso ao estado do Originador, armazenado dentro do memento. E
+funciona com todos os mementos através da interface base.
+
+(11): Código cliente.

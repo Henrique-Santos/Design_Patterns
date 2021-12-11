@@ -1,0 +1,40 @@
+Bridge Design Pattern
+
+Intenção: Permite dividir uma grande classe ou um conjunto de classes estritamente relacionadas em
+duas hierarquias distintas - a abstracção e a implementação - que podem ser
+desenvolvidos independentemente um do outro.
+
+              A
+           /     \                        A         N
+         Aa      Ab        ===>        /     \     / \
+        / \     /  \                 Aa(N) Ab(N)  1   2
+      Aa1 Aa2  Ab1 Ab2
+
+--- Código ---
+
+(1): A "abstração" define a interface para o "controle" das
+duas hierarquias de classe. Ela mantém uma referência a um
+objeto da hierarquia de "implementação" e delega todo o
+trabalho real para esse objeto.
+
+(2): Você pode estender classes a partir dessa hierarquia de
+abstração independentemente das classes de dispositivo.
+
+(3): A interface "Implementação" declara métodos comuns a todas as
+classes concretas de implementação. Ela não precisa coincidir
+com a interface de abstração. Na verdade, as duas interfaces
+podem ser inteiramente diferentes. Tipicamente a interface de
+implementação fornece apenas operações primitivas, enquanto
+que a abstração define operações de alto nível baseada
+naquelas primitivas.
+
+(4): Cada Implementação Concreta corresponde a uma plataforma específica e
+implementa a interface de implementação utilizando a API dessa plataforma.
+
+(5): Exceto na fase de inicialização, em que um objeto de Abstração fica ligado
+com um objeto de Implementação específico, o código do cliente só deve depender da
+Abstracção. Desta forma, o código do cliente pode suportar qualquer abstração.
+combinação de abstração-implementação.
+
+(6): O código do cliente deve ser capaz de trabalhar com qualquer abstração pré-configurada.
+combinação de abstração-implementação.

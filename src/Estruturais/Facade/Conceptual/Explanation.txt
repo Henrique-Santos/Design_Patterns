@@ -1,0 +1,34 @@
+Facade Design Pattern
+
+Intenção: Fornece uma interface simplificada para uma biblioteca, um framework, ou qualquer
+outro conjunto complexo de classes.
+
+--- Código ---
+
+(1): A classe Facade fornece uma interface simples para a lógica complexa de um ou
+vários subsistemas. A Fachada delega os pedidos do cliente aos
+objetos apropriados dentro do subsistema. A Fachada é também responsável por
+gerir o seu ciclo de vida. Tudo isto protege o cliente da indesejável
+complexidade do subsistema.
+
+(2): Dependendo das necessidades da sua aplicação, você pode fornecer a Fachada
+objetos existentes do subsistema ou forçar a Fachada a criá-los por si só.
+
+(3): Os métodos da Fachada são atalhos convenientes para as sofisticadas
+funcionalidade dos subsistemas. No entanto, os clientes acessam apenas a uma fração
+das capacidades de um subsistema.
+
+(4): O Subsistema pode aceitar requisições quer da fachada quer diretamente do cliente.
+Em qualquer caso, para o Subsistema, a Fachada é mais um cliente, e não é
+uma parte do Subsistema.
+
+(5): Algumas fachadas podem funcionar com múltiplos subsistemas ao mesmo tempo.
+
+(6): O código do cliente funciona com subsistemas complexos através de uma interface simples
+fornecido pela Fachada. Quando uma fachada gere o ciclo de vida do subsistema,
+o cliente pode nem sequer saber da existência do subsistema. Isto
+permite manter a complexidade sob controle.
+
+(7): O código do cliente pode ter alguns dos objetos do subsistema já criados. 
+Neste caso, pode valer a pena inicializar a Fachada com estes objetos
+em vez de deixar a Fachada criar novas instâncias.

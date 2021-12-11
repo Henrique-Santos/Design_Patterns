@@ -1,0 +1,27 @@
+Flyweight Design Pattern
+
+Intenção: Permite encaixar mais objetos na quantidade disponível de RAM, partilhando
+partes comuns do estado entre vários objetos, em vez de manter todos os
+dados em cada objecto.
+
+--- Código ---
+
+(1): O Flyweight armazena uma porção comum do estado (também chamado intrínseco
+estado) que pertence a múltiplas entidades empresariais reais. O Flyweight aceita
+o resto do Estado (estado extrínseco, único para cada entidade) através do seu
+parâmetros do método.
+
+(2): A Fábrica Flyweight cria e gera os objetos Flyweight. Ela assegura
+que os flyweights são partilhados corretamente. Quando o cliente solicita um flyweight,
+a fábrica, ou ela devolve uma instância existente ou cria uma nova, se
+ainda não existe.
+
+(3): Devolve o hash de string de um Flyweight para um determinado estado.
+
+(4): Devolve um Flyweight existente com um determinado estado ou cria um novo.
+
+(5): O código do cliente geralmente cria um monte de flyweights pré-populados na
+fase de inicialização do pedido.
+
+(6): O código do cliente ou armazena ou calcula o estado extrínseco e passa-o
+aos métodos do flyweight.

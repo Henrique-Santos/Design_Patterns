@@ -1,0 +1,35 @@
+Visitor Design Pattern
+
+Intenção: Permite separar os algoritmos dos objetos sobre os quais eles operam.
+
+--- Código ---
+
+(1): A interface Component declara um método de "aceitação" que deve tomar como
+argumento a interface base do visitante.
+
+(2): Cada componente concreto deve implementar o método de "aceitação".
+
+(3): Note que estamos chamando `visitConcreteComponentA`, que corresponde ao
+nome da classe atual. Desta forma, deixamos o visitante conhecer a classe do
+componente com o qual ele trabalha.
+
+(4): Os componentes concretos podem ter métodos especiais que não existem em suas
+classe base ou interface. O Visitante ainda é capaz de usar estes métodos
+uma vez que está ciente da classe concreta do componente.
+
+(5): O mesmo aqui: visiteConcreteComponentB => ConcreteComponentB
+
+(6): A Interface Visitor declara um conjunto de métodos de visita que correspondem a
+classes de componentes. A assinatura de um método de visita permite ao visitante
+identificar a classe exata do componente com o qual ele está lidando.
+
+(7): Os visitantes concretos implementam várias versões do mesmo algoritmo, que pode
+trabalhar com todas as classes de componentes concretos.
+Você pode experimentar o maior benefício do padrão Visitor ao utilizá-lo
+com uma estrutura de objetos complexa, tal como uma árvore composta. Neste caso, ela
+pode ser útil para armazenar algum estado intermediário do algoritmo enquanto
+executa os métodos do visitante sobre vários objetos da estrutura.
+
+(8): O código do cliente pode executar operações de visita sobre qualquer conjunto de elementos sem
+descobrir quais são suas classes concretas. A operação de aceitação direciona uma chamada para
+a operação apropriada no objeto visitante.

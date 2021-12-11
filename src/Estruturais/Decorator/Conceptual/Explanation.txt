@@ -1,0 +1,38 @@
+Decorator Design Pattern
+
+Intenção: Permite anexar novos comportamentos aos objetos colocando estes
+dentro de objetos de embalagem especiais que contêm os comportamentos.
+
+--- Código ---
+
+(1): A interface base Componente define operações que podem ser alteradas por
+decoradores.
+
+(2): Os componentes concretos fornecem implementações por padrão das operações. Aí
+podem ter várias variações destas classes.
+
+(3): A classe base Decorator segue a mesma interface que os outros componentes.
+O principal objetivo desta classe é definir a interface de encapsulamento para todos
+decoradores concretos. A implementação por padrão do código de encapsulamento pode
+incluir um campo para armazenar um componente embrulhado e os meios para inicializar
+ele.
+
+(4): O Decorador delega todo o trabalho so componente embrulhado.
+
+(5): Os decoradores concretos chamam o objeto embrulhado e alteram o seu resultado de alguma forma.
+
+(6): Os decoradores podem chamar a execução da operação dos pais, em vez de
+chamar diretamente do objeto embrulhado. Esta abordagem simplifica a extensão
+de classes de decoradores.
+
+(7): Os decoradores podem executar o seu comportamento antes ou depois da chamada a um
+objeto embrulhado.
+
+(8): O código do cliente funciona com todos os objetos, utilizando a interface Componente. Isto
+é uma forma de se manter independente das classes de componentes concretos.
+
+(9): Desta forma, o código do cliente pode suportar ambos os componentes, tanto os simples...
+
+(10): ...bem como decoradores.
+Note-se como os decoradores podem embrulhar não só componentes simples, mas também os outros
+decoradores também.

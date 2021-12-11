@@ -1,0 +1,37 @@
+Command Design Pattern
+
+Intenção: Transforma um pedido em um objeto isolado que contém todas as
+informações sobre o pedido. Esta transformação permite parametrizar
+métodos com diferentes solicitações, retardar ou enfileirar a execução de uma solicitação.
+
+--- Código ---
+
+(1): A classe base Comand define a interface comum para todos os
+comandos concretos.
+
+(2): Alguns comandos podem implementar operações simples por conta própria.
+
+(3): No entanto, alguns comandos podem delegar operações mais complexas a outros objetos,
+chamados "receptores".
+
+(4): Dados de contexto, necessários para lançar os métodos do receptor.
+
+(5): Comandos complexos podem aceitar um ou vários objetos receptores juntamente com
+qualquer dado de contexto através do construtor.
+
+(6): Os comandos podem delegar a qualquer método de um receptor.
+
+(7): As classes Receptoras contêm alguma lógica empresarial importante. Elas sabem como
+realizar todos os tipos de operações, associadas à realização de um pedido. De
+fato, qualquer classe pode servir como Receptor.
+
+(8): A Invoker(remetente) está associada a um ou vários comandos. Ele envia um pedido para
+o comando.
+
+(9): Inicia os comandos.
+
+(10): O invocador não depende de classes concretas de comando ou receptor. O
+Invoker passa um pedido a um receptor indiretamente, executando um
+comando.
+
+(11): O código do cliente pode parametrizar um invocador com qualquer comando.

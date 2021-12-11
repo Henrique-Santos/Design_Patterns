@@ -1,0 +1,17 @@
+Adapter Design Pattern
+
+Intenção: Fornece uma interface unificada que permite objetos com incompatibilidade de
+interfaces colaborarem.
+
+
+--- Código ---
+
+(1): O Target define a interface específica do domínio utilizado pelo código do cliente.
+
+(2): O Adaptee contém algum comportamento útil, mas a sua interface é incompatível
+com o código de cliente existente. O Adaptee precisa de alguma adaptação antes do
+código do cliente poder utilizá-lo.
+
+(3): O Adaptador torna a interface do Adaptado compatível com a interface Target.
+
+(4): O código do cliente suporta todas as classes que seguem a interface Target.

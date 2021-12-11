@@ -1,0 +1,23 @@
+Mediator Design Pattern
+
+Intenção: Permite reduzir as dependências caóticas entre objetos. O padrão
+restringe as comunicações diretas entre os objetos e obriga-os a
+colaborar apenas através de um objeto mediador.
+
+--- Código ---
+
+(1): A interface mediadora declara um método usado pelos
+componentes para notificar o mediador sobre vários eventos. O
+mediador pode reagir a esses eventos e passar a execução para
+outros componentes.
+
+(2): Os mediadores concretos implementam um comportamento cooperativo coordenando vários
+componentes.
+
+(3): A Componente Base fornece a funcionalidade básica de armazenamento de uma instância de mediador
+dentro de objetos componentes.
+
+(4): Os componentes concretos implementam várias funcionalidades. Eles não dependem de
+outros componentes. Também não dependem de nenhuma classe de mediadores concretos.
+
+(5): O código cliente.

@@ -1,0 +1,52 @@
+Composite Design Pattern
+
+Intenção: Permite compor objetos em estruturas de árvores e depois trabalhar com
+essas estruturas como se fossem objetos individuais.
+
+--- Código ---
+
+(1): A classe base Component declara operações comuns para ambos os
+objetos simples e complexos de uma composição.
+
+(2): Opcionalmente, o componente base pode declarar uma interface para configuração e
+aceder a um dos pais do componente uma estrutura em árvore. Pode também
+fornecer alguma implementação por padrão para estes métodos.
+
+(3): Em alguns casos, seria benéfico definir a gestão do pai
+operações mesmo na classe de componentes de base. Desta forma, não necessitará de
+expor qualquer classe de componentes concretos ao código do cliente, mesmo durante a
+montagem da árvore de objetos. O lado negativo é que estes métodos estarão vazios
+para os componentes ao nível das folhas.
+
+(4): Pode fornecer um método que permita ao código do cliente descobrir se um
+componente pode ter filhos.
+
+(5): O componente de base pode implementar algum comportamento por padrão ou deixá-lo a
+classes concretas (ao declarar o método que contém o comportamento como "abstracto").
+
+(6): A classe Leaf representa os objetos finais de uma composição. Uma folha não pode ter
+quaisquer filhos.
+Normalmente, são os objetos de Folha que fazem o verdadeiro trabalho, enquanto que os
+objetos compostos só delegam os seus subcomponentes.
+
+(7): A classe Composite representa os componentes complexos que podem ter filhos.
+Normalmente, os objetos Composite delegam o trabalho real aos seus filhos e
+depois "somam" o resultado.
+
+(8): Um objeto composto pode adicionar ou remover outros componentes (tanto simples como
+complexo) para a sua lista de filhos.
+
+(9): O Composite executa a sua lógica primária de uma forma particular. Ele
+atravessa recursivamente todas os seus filhos, recolhendo e somando
+os seus resultados. Uma vez que os filhos da composição passam também estas chamadas para os seus
+filhos e assim por diante, toda a árvore de objetos é atravessada como resultado.
+
+(10): O código do cliente funciona com todos os componentes, sejam eles simples ou complexos através da interface de base.
+
+(11): Desta forma, o código do cliente pode suportar os componentes simples da folha...
+
+(12): ...suportando composições complexas.
+
+(13): Graças ao fato de as operações de gestão de filhos serem declaradas na
+classe de componente base, o código do cliente pode funcionar com qualquer componente, simples ou
+complexo, sem depender das suas classes concretas.
