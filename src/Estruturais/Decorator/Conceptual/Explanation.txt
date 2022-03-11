@@ -17,7 +17,7 @@ decoradores concretos. A implementação por padrão do código de encapsulament
 incluir um campo para armazenar um componente embrulhado e os meios para inicializar
 ele.
 
-(4): O Decorador delega todo o trabalho so componente embrulhado.
+(4): O Decorador delega todo o trabalho ao componente embrulhado.
 
 (5): Os decoradores concretos chamam o objeto embrulhado e alteram o seu resultado de alguma forma.
 
